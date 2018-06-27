@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Bolao {
@@ -14,7 +15,7 @@ public class Bolao {
 	private Long id;
 	
 	private String nome;
-	
+	@OneToMany
 	private List<Aposta> apostas;
 
 	public Long getId() {
