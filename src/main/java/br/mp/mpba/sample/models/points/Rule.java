@@ -1,8 +1,8 @@
-package br.mp.mpba.sample.models.report;
+package br.mp.mpba.sample.models.points;
 
 import br.mp.mpba.sample.models.Aposta;
 
-public interface Regra {
+interface Rule {
 
 	public int verifica(Aposta aposta);
 }
