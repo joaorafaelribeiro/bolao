@@ -1,5 +1,8 @@
 package br.mp.mpba.sample.models;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +14,8 @@ public class Bolao {
 	private Long id;
 	
 	private String nome;
+	
+	private List<Aposta> apostas;
 
 	public Long getId() {
 		return id;
@@ -28,5 +33,9 @@ public class Bolao {
 		this.nome = nome;
 	}
 	
+	public List<Aposta> getApostas(Usuario usuario) {
+		return apostas.stream().filter(partida -> partida.getUsuario().equals(usuario)).collect(Collectors.toList());
+		
+	}
 	
 }
